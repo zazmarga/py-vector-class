@@ -1,7 +1,7 @@
 import pytest
 
-from app.main import Vector
-
+# from app.main import Vector
+from app.reference_vector import Vector
 
 def test_vector_instance():
     vector = Vector(3, 4)
@@ -10,6 +10,13 @@ def test_vector_instance():
     )
     assert hasattr(vector, 'y'), (
         "Vector instance should have attribute 'y'"
+    )
+
+
+def test_vector_decimals():
+    vector = Vector(-2.343, 8.008)
+    assert (vector.x, vector.y) == (-2.34, 8.01), (
+        "Attributes 'x', 'y' should be rounded to two decimals."
     )
 
 
@@ -81,7 +88,7 @@ def test_vector_mul_number(vector1_x, vector1_y, number, vector2_x, vector2_y):
     'vector1_x,vector1_y,vector2_x,vector2_y,result',
     [
         (0, 0, 1, -2, 0),
-        (3.11, 5.56, 4.5, -10.2, -42.72),
+        (3.11, 5.56, 4.5, -10.2, -42.71699999999999),
         (2, 2, -2, 2, 0)
     ]
 )
@@ -119,8 +126,8 @@ def test_create_vector_by_two_points(start_point, end_point, vector_coords):
     'coords,length',
     [
         ((0, 10.44), 10.44),
-        ((-4.44, 5.2), 6.84),
-        ((-3, -4), 5.0),
+        ((-4.44, 5.2), 6.837660418593483),
+        ((-3.88, -4.98), 6.313065816225901),
     ]
 )
 def test_get_length(coords, length):
@@ -171,7 +178,7 @@ def test_angle_between(coords_1, coords_2, angle):
     'coords_1,angle',
     [
         ((0, 10.44), 0),
-        ((-4.44, 5.2), 41),
+        ((-4.44, 5.2), 40),
         ((-3, -4), 143),
     ]
 )

@@ -19,11 +19,12 @@ Vector on coordinate plane is directed line segment, that always
 starts in (0, 0) and ends in coordinates (x, y).
 
 Implement Vector class, its constructor takes and stores two 
-args: x, y - coordinates of end of the vector.
+coordinates: x, y - coordinates of end of the vector, **rounded 
+to two decimals**.
 ```python
-vector = Vector(-2, 8)
-vector.x == -2
-vector.y == 8
+vector = Vector(-2.343, 8.008)
+vector.x == -2.34
+vector.y == 8.0
 ```
 
 Vector class should have such magic methods:
@@ -61,13 +62,12 @@ isinstance(vector2, Vector) is True
 vector2.x == 7.49
 vector2.y == 14.97
 ```
-Multiplying Vector on Vector should return their dot product,
-rounded to two decimals.
+Multiplying Vector on Vector should return their dot product.
 ```python
-vector1 = Vector(2, 4)
-vector2 = Vector(-1, 3)
+vector1 = Vector(2.11, 4.55)
+vector2 = Vector(-3.51, 10.33)
 dot_product = vector1 * vector2
-dot_product == 10
+dot_product == 39.5954
 ```
 
 Also, Vector class should have such methods:
@@ -88,7 +88,7 @@ vector.y == 3.4
 
 - `get_length`
 
-Returns length of the vector, rounded to 2 decimals.
+Returns length of the vector.
 ```python
 vector = Vector(2, 4)
 vector.get_length() == 4.47
@@ -122,7 +122,7 @@ For your cosine `cos_a` use `math.degrees(math.acos(cos_a))`.
 **NOTE**: In this method round only returning degrees.
 - `get_angle`
 
-Returns angle current vector and positive Y axis.
+Returns angle between current vector and positive Y axis.
 ```python
 vector = Vector(33, 8)
 vector.get_angle() == 76
