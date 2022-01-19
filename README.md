@@ -117,7 +117,8 @@ vector1.angle_between(vector2) == 102
 ```
 Most likely you get cosine of the angle. To correct calculate angle
 use `math` library.
-For your cosine `cos_a` use `math.degrees(math.acos(cos_a))`.
+For your cosine `cos_a` use `math.degrees(math.acos(cos_a))` in order 
+to get degrees.
 
 **NOTE**: In this method round only returning degrees.
 - `get_angle`
@@ -140,5 +141,3 @@ vector2.y == 28.99
 ```
 You may use `math.cos`, `math.sin` here, but they use **radians**.
 In order to convert degrees to radians use `math.radians`.
-
-**NOTE**: Round only coordinates in returning Vector to 2 decimals.
