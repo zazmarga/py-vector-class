@@ -98,13 +98,13 @@ vector.get_length() == 4.47
 Returns normalized copy of vector.
 ```python
 vector1 = Vector(13, -4)
-vector1.get_length == 13.6
+vector1.get_length() == 13.6
 
 vector2 = vector1.get_normalized()
 
 vector2.x == 0.96
 vector2.y == -0.29
-vector2.get_length == 1.0
+vector2.get_length() == 1.0
 ```
 - `angle_between`
 
