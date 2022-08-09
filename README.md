@@ -91,7 +91,7 @@ vector.y == 3.4
 Returns length of the vector.
 ```python
 vector = Vector(2, 4)
-vector.get_length() == 4.47
+vector.get_length() == 4.47213595499958
 ```
 - `get_normalized`
 
